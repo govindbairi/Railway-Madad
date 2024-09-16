@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function submitForm() {
+            var complaintTypeElement = document.getElementById("complaint_type");
+            var complaintType = complaintTypeElement.options[complaintTypeElement.selectedIndex].text;
+            if (complaintType === "--Select--") {
+                alert("Please select a complaint type.");
+            } else {
+                alert("Forwarded to " + complaintType + " department successfully.");
+            }
+            return false; // Prevent actual form submission
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grievance Detail Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <h1>Railway Madad</h1>
+        <div class="nav-links">
+            <a href="#">Login</a>
+            <a href="#">Sign Up</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="left-panel">
+            <div class="nav-menu">
+               
+                <a href="#">Reservation Enquiry</a>
+                <a href="#">Retiring Room Booking</a>
+                <a href="#">Indian Railways</a>
+                <a href="#">UTS Ticketing</a>
+                <a href="#">Freight Business</a>
+                <a href="#">Railway Parcel Website</a>
+            </div>
+            <div class="nav-menu">
+                <a href="#">TRAIN</a>
+                <a href="#">STATION</a>
+                <a href="#">APPRECIATION/RAIL ANUBHAV</a>
+                <a href="#">ENQUIRY</a>
+                <a href="#">TRACK YOUR CONCERN</a>
+                <a href="#">SUGGESTIONS</a>
+            </div>
+        </div>
+        <div class="right-panel">
+            <div class="form-container">
+                <h2>Grievance Detail</h2>
+                <form onsubmit="return submitForm()">
+                    <label for="mobile">Mobile No.</label>
+                    <input type="text" id="mobile" placeholder="Enter your mobile number">
+                    
+                    <label for="pnr">PNR</label>
+                    <input type="text" id="pnr" placeholder="Enter PNR">
+                    
+                    <label for="type">Type</label>
+                    <option value="o1"></option>
+                    <select class="form-control" id="complaint_type" name="complaint_type">
+                        <option value="" class="selectL">--Select--</option>
+                        <option value="132">Medical Assistance</option>
+                        <option value="87">Security</option>
+                        <option value="152">Divyangjan Facilities</option>
+                        <option value="173">Facilities for Women with Special needs</option>
+                        <option value="85">Electrical Equipment</option>
+                        <option value="82">Coach - Cleanliness</option>
+                        <option value="81">Punctuality</option>
+                        <option value="83">Water Availability</option>
+                        <option value="136">Coach - Maintenance</option>
+                        <option value="86">Catering &amp; Vending Services</option>
+                        <option value="88">Staff Behaviour</option>
+                        <option value="89">Corruption / Bribery</option>
+                        <option value="84">Bed Roll</option>
+                        <option value="90">Miscellaneous</option>
+                    </select>
+                    
+                    <label for="incident-date">Incident Date</label>
+                    <input type="date" id="incident-date">
+                    
+                    <label for="file-upload">Upload File</label>
+                    <input type="file" id="file-upload">
+                    
+                    <label for="description">Grievance Description</label>
+                    <textarea id="description" placeholder="Enter grievance details"></textarea>
+
+                    <div class="form-buttons">
+                        <button type="submit" class="submit-btn">Submit</button>
+                        <button type="reset" class="reset-btn">Reset</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
